@@ -1,24 +1,24 @@
 <template>
 <div>
-  <h4>Add an Event <input type="checkbox" v-model="showForm"></h4>
-  <div class="form" v-show="showForm">
+  <h4>Add an Event? <input type="checkbox" v-model="showForm"></h4>
+  <form v-show="showForm">
     <div class="form-group">
-      <label for="">Title</label>
+      <label>Title</label>
       <input type="text" class="form-control" v-model="event.title">
     </div>
     <div class="form-group">
-      <label for="">Description</label>
+      <label>Description</label>
       <input type="text" class="form-control" v-model="event.description">
       </div>
     <div class="form-group">
-      <label for="">Date</label>
+      <label>Date</label>
       <input type="date" class="form-control" v-model="event.date">
     </div>
     <div class="form-group">
-      <label for="">Location</label>
+      <label>Location</label>
       <input type="text" class="form-control" v-model="event.location">
     </div>
-  </div>
+  </form>
   <button class="btn btn-sm btn-primary" @click="addEvent">Submit</button>
 </div>
 </template>

@@ -7,12 +7,14 @@
         placeholder="email"
         class="form-control"
         v-model="email"/>
+        </div>
+        <div>
       <input
         type="password"
         placeholder="password"
         class="form-control"
         v-model="password"/>
-      <button class='btn btn-success' @click="signUp">Leave</button>
+      <button class='entrybtn btn btn-outline-success' @click="signUp">Leave</button>
     </div>
     <br>
     <router-link to="/signin">Already a user? Sign in instead</router-link>
