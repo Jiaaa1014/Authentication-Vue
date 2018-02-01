@@ -5,12 +5,12 @@
     <hr>
     <AddEvent/>
     <hr>
-    {{$store.state}}
+    {{$store.state.events}}
   </div>
 </template>
 
 <script>
-import { firebaseApp } from "../firebaseApp";
+import { firebaseApp, eventsRef } from "../firebaseApp";
 import AddEvent from "./AddEvent";
 
 export default {
@@ -22,6 +22,15 @@ export default {
   },
   components: {
     AddEvent
+  },
+  mounted() {
+    eventsRef.on("value", snap => {
+      let events = [];
+      snap.forEach(event => {
+        events.push(event.val());
+      });
+      this.$store.dispatch("setEvents", events);
+    });
   }
 };
 </script>

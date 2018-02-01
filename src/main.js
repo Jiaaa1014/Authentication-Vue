@@ -27,8 +27,6 @@ firebaseApp.auth().onAuthStateChanged(user => {
   }
   else {
     router.replace('/signin')
-    // TODO replace by commenting back in
-
   }
 })
 

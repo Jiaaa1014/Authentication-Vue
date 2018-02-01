@@ -15,7 +15,7 @@
       <button class='btn btn-success' @click="signIn">GO</button>
     </div>
     <br>
-    <router-link to="/signup">Sign up instead</router-link>
+    <router-link to="/signup">Sign Up instead</router-link>
     <p>{{error.message}}</p>
     <br>
   </div>
