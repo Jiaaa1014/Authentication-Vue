@@ -12,22 +12,18 @@ import SignUp from './components/SignUp.vue'
 
 const router = new VueRouter({
   mode: 'history',
-  // is routes not route
   routes: [
     { path: '/dashboard', component: DashBoard },
     { path: '/signin', component: SignIn },
     { path: '/signup', component: SignUp }
   ]
 })
-// 沒登入轉signin
 firebaseApp.auth().onAuthStateChanged(user => {
   if (user) {
     store.dispatch('signIn', user)
     router.push('/dashboard')
   }
-  else {
-    router.replace('/signin')
-  }
+  else router.replace('/signin')
 })
 
 new Vue({

@@ -3,7 +3,6 @@ import * as types from './mutation-types'
 export const mutations = {
   [types.SIGN_IN](state, user_payload) {
     state.user = user_payload
-    console.warn('mutations.js', new Date())
   },
 
   [types.SIGN_OUT](state) {
@@ -12,5 +11,4 @@ export const mutations = {
   [types.SET_EVENTS](state, event_payload) {
     state.events = event_payload
   }
-
 }
